@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Management Workflow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Life Management Workflow</h1>
+        <p id="welcomeMessage">Добро пожаловать!</p>
+        <button onclick="toggleTheme()">Switch Theme</button>
+        <button onclick="logout()">Log Out</button>
+    </header>
+
+    <div class="container">
+        <!-- To-Do Section -->
+        <section id="todoSection">
+            <h2>To-Do List</h2>
+            <input type="text" id="todoInput" placeholder="Add a new task">
+            <button id="addTaskBtn">Add Task</button>
+            <ul id="todoList"></ul>
+        </section>
+
+        <!-- Notes Section -->
+        <section id="notesSection">
+            <h2>Notes</h2>
+            <input type="text" id="noteTitle" placeholder="Note Title">
+            <textarea id="noteContent" placeholder="Write your note"></textarea>
+            <button id="addNoteBtn">Add Note</button>
+            <div id="notesContainer"></div>
+        </section>
+
+        <!-- Pomodoro Section -->
+        <section id="pomodoroSection">
+            <h2>Pomodoro Timer</h2>
+            <div id="timerDisplay">25:00</div>
+            <button id="startPomodoroBtn">Start</button>
+            <button id="startBreakBtn">Break</button>
+            <button id="resetTimerBtn">Reset</button>
+            <p>Completed Pomodoros: <span id="pomodoroCounter">0</span></p>
+        </section>
+    </div>
+
+    <script src="todo.js"></script>
+    <script src="notes.js"></script>
+    <script src="pomodoro.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+/* Root Variables for Dark Theme (Default) */
+:root {
+    --background-color: #1f2029;
+    --text-color: #e0e0e0;
+    --header-bg-color: #2b3d31;
+    --button-bg-color: #566a5d;
+    --button-hover-bg-color: #3e4e40;
+    --container-bg-color: #2f3d34;
+    --input-bg-color: #3e4e40;
+    --border-color: #566a5d;
+    --note-bg-color: #3e4e40;
+    --delete-button-bg-color: #a64444;
+    --delete-button-hover-bg-color: #802f2f;
+}
+
+/* Light Theme Variables */
+body.light-theme {
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --header-bg-color: #97b097;
+    --button-bg-color: #3e4e40;
+    --button-hover-bg-color: #2b3d31;
+    --container-bg-color: #ffffff;
+    --input-bg-color: #e8e8e8;
+    --border-color: #ccc;
+    --note-bg-color: #f4f4f4;
+    --delete-button-bg-color: #dc3545;
+    --delete-button-hover-bg-color: #a71d2a;
+}
+
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header */
+header {
+    background-color: var(--header-bg-color);
+    color: var(--text-color);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+header button {
+    background-color: var(--button-bg-color);
+    color: var(--text-color);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+header button:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--container-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: var(--text-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Inputs and Buttons */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    outline: none;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--button-bg-color);
+}
+
+button {
+    background-color: var(--button-bg-color);
+    color: var(--text-color);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+/* ToDo List */
+#todoList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--note-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+#todoList li.completed {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+#todoList button {
+    background-color: var(--delete-button-bg-color);
+    transition: background-color 0.3s;
+}
+
+#todoList button:hover {
+    background-color: var(--delete-button-hover-bg-color);
+}
+
+/* Notes Section */
+#notesContainer .note {
+    background-color: var(--note-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+}
+
+.note h3 {
+    margin-top: 0;
+}
+
+.note button {
+    background-color: var(--delete-button-bg-color);
+    transition: background-color 0.3s;
+}
+
+.note button:hover {
+    background-color: var(--delete-button-hover-bg-color);
+}
+
+/* Pomodoro Timer */
+#pomodoroSection {
+    text-align: center;
+}
+
+#timerDisplay {
+    font-size: 3rem;
+    margin: 20px 0;
+    color: var(--text-color);
+    padding: 10px;
+    background-color: var(--note-bg-color);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.pomodoro-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pomodoro-buttons button {
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: transform 0.2s;
+}
+
+.pomodoro-buttons button:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    #timerDisplay {
+        font-size: 2rem;
+    }
+
+    .pomodoro-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
